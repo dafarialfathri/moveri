@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Sign Up</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .square {
+            background-color: white;
+            width: 450px;
+            height: 480px;
+        }
+        
+        h1 {
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            color: #2f7b14;
+            padding-top: 8px;
+        }
+        
+        h2 {
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            color: #2f7b14;
+        }
+        
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 7px;
+            margin-bottom: -5px;
+        }
+        
+        td {
+            padding: 7px;
+        }
+        
+        input[type="submit"] {
+            width: 358px;
+            height: 35px;
+            border-radius: 6px;
+            border-color: transparent;
+            background-color: #2f7b14;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 19px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        label {
+            font-size: 17px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: black;
+        }
+        
+        input[type="text"] {
+            width: 259px;
+            height: 29px;
+            background-color: #d3d3d3;
+            border-radius: 6px;
+            border-color: transparent;
+            color: black;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        input[type="password"] {
+            width: 259px;
+            height: 29px;
+            background-color: #d3d3d3;
+            border-radius: 6px;
+            border-color: transparent;
+            color: black;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        select[id="Position"] {
+            width: 266px;
+            height: 35px;
+            background-color: #d3d3d3;
+            border-radius: 6px;
+            border-color: transparent;
+            color: black;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        h3 {
+            font-size: 14px;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="square">
+            <h1>Sign Up</h1>
+            <h2>Please entry your data here</h2>
+            <table>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="text" id="email" placeholder="Entry email adress . ."></td>
+                </tr>
+                <tr>
+                    <td><label>NIP/NIM</label></td>
+                    <td><input type="text" id="NIP" placeholder="Entry NIP / NIM . ."></td>
+                </tr>
+                <tr>
+                    <td><label>Position</label></td>
+                    <td><select id="Position" name="Position">
+                        <option value="pos1">Kepala Dokter</option>
+                        <option value="pos2">Dokter Senior</option>
+                        <option value="pos3">Kepala Perawat</option>
+                        <option value="pos4">Perawat Senior</option>
+                        <option value="pos5">Dokter Ko-As</option>
+                        <option value="pos1">Perawat Magang</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Username</label></td>
+                    <td><input type="text" id="username" placeholder="Create username . ."></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input type="password" id="password" placeholder="Create password . ."></td>
+                </tr>
+                <td colspan="2"><input type="submit" value="create account" onclick="validateLogin()"></td>
+                </tr>
+            </table>
+            <h3>already have an account? <a href="login.html">login</a></h3>
+        </div>
+    </div>
+    <script>
+        function validateLogin() {
+            var email = document.getElementById('email').value;
+            var NIP = document.getElementById('NIP').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (email !== '' && NIP !== '' && username !== '' && password !== '') {
+                alert('registration have done');
+                window.location.href = 'login.html';
+            } else {
+                alert('registration was failed, please entry your data again');
+                window.location.href = 'register.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

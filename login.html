@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Login</title>
+    <style>
+        .center-image {
+            display: block;
+            padding: 10px;
+        }
+        
+        .container {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            margin-bottom: 10px;
+        }
+        
+        .square {
+            background-color: white;
+            width: 450px;
+            height: 480px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            color: #2f7b14;
+        }
+        
+        body {
+            background-color: #2f7b14;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 17px;
+            padding: 10px;
+        }
+        
+        table {
+            border-collapse: separate;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: -17px;
+            padding: 10px;
+        }
+        
+        td {
+            padding: 6px;
+        }
+        
+        h5 {
+            font-size: 14px;
+            color: black;
+        }
+        
+        input[type="text"] {
+            width: 260px;
+            height: 29px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+        input[type="password"] {
+            width: 260px;
+            height: 29px;
+            border-radius: 6px;
+            background-color: #d3d3d3;
+            border-color: transparent;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+        input[type="submit"] {
+            background-color: #2f7b14;
+            font-size: 19px;
+            color: white;
+            width: 358px;
+            height: 35px;
+            border: 0px;
+            border-radius: 6px;
+            border-color: transparent;
+            margin-bottom: -5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="square">
+            <img src="logo hijau.png" alt="icon moveri" width="140px" height="140px">
+            <h1>Sign in to Your Account</h1>
+            <table>
+                <tr>
+                    <td><label for="Username">Username</label></td>
+                    <td><input type="text" id="username" placeholder="Entry username . ."></td>
+                </tr>
+                <tr>
+                    <td><label for="Password">Password</label></td>
+                    <td><input type="password" id="password" placeholder="Entry password . ."></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="login" onclick="validateLogin()"></td>
+                </tr>
+            </table>
+            <h5>forgot your password? <a href="forgot.html">click here</a> <br> not yet have an account? <a href="register.html">sign in</a></h5>
+        </div>
+    </div>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username !== '' && password !== '') {
+                alert('yeay welcome to MOVERI');
+                window.location.href = 'home.html';
+            } else {
+                alert('login failed, please try again');
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

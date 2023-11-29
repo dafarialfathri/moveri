@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MOVERI | Dashboard</title>
+    <style>
+        body {
+            background-color: #2f7b14;
+        }
+        
+        input[name="logout"] {
+            position: fixed;
+            top: 12px;
+            right: 15px;
+            width: 65px;
+            height: 33px;
+            border-radius: 14px;
+            color: #2f7b14;
+            background-color: white;
+            font-weight: bold;
+            border-color: transparent;
+        }
+        
+        input[name="home"] {
+            position: fixed;
+            top: 12px;
+            right: 93px;
+            width: 65px;
+            height: 33px;
+            border-radius: 14px;
+            color: #2f7b14;
+            background-color: white;
+            font-weight: bold;
+            border-color: transparent;
+        }
+        
+        .square0 {
+            display: inline-flex;
+            position: relative;
+            width: 300px;
+            height: 100vh;
+            background-color: white;
+            top: -380px;
+        }
+        
+        img[class="moveri"] {
+            object-fit: cover;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            display: block;
+        }
+        
+        input[name="monitor"] {
+            display: block;
+            width: 150px;
+            height: 35px;
+            border-color: transparent;
+            background-color: transparent;
+            object-fit: cover;
+            font-size: 21px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            color: #2f7b14;
+            margin: 5px;
+        }
+        
+        input[name="control"] {
+            display: block;
+            width: 150px;
+            height: 35px;
+            border-color: transparent;
+            background-color: transparent;
+            object-fit: cover;
+            font-size: 21px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            color: #2f7b14;
+            margin: 5px;
+        }
+        
+        input[name="history"] {
+            display: block;
+            width: 150px;
+            height: 35px;
+            border-color: transparent;
+            background-color: transparent;
+            object-fit: cover;
+            font-size: 21px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            color: #2f7b14;
+            margin: 5px;
+        }
+        
+        input[name="support"] {
+            display: block;
+            width: 150px;
+            height: 35px;
+            border-color: transparent;
+            background-color: transparent;
+            object-fit: cover;
+            font-size: 21px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            color: #2f7b14;
+            margin: 5px;
+        }
+        
+        .container {
+            display: block;
+            position: fixed;
+            margin-top: 185px;
+            justify-content: center;
+            margin-left: 67px;
+        }
+        
+        .square1 {
+            display: inline-flex;
+            align-content: baseline;
+            position: relative;
+            width: 850px;
+            height: 500px;
+            left: 100px;
+            top: 80px;
+            background-color: white;
+            justify-content: center;
+        }
+        
+        .container1 {
+            display: block;
+            position: fixed;
+            justify-content: center;
+        }
+        
+        td {
+            padding-inline: 30px;
+            padding-block: 16px;
+            font-size: 18px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #2f7b14;
+            background-color: #d3d3d3;
+            text-align: center;
+            align-items: center;
+            width: 50%;
+        }
+        
+        table {
+            margin-top: 35px;
+            border-spacing: 7px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="corner-content">
+            <form action="login.html"><input type="submit" name="logout" value="logout"></form>
+            <form action="home.html"><input type="submit" name="home" value="home"></form>
+        </div>
+    </header>
+    <div class="square0">
+        <img class="moveri" src="logo hijau.png" alt="moveri">
+        <div class="container">
+            <form action="monitor.html"><input type="submit" name="monitor" value="Monitor"></form>
+            <form action="control.html"><input type="submit" name="control" value="Control"></form>
+            <form action="history.html"><input type="submit" name="history" value="History"></form>
+            <form action="support.html"><input type="submit" name="support" value="Support"></form>
+        </div>
+    </div>
+    <div class="square1">
+        <div class="container1">
+            <table>
+                <tr>
+                    <td>Nama</td>
+                    <td>Hadiman</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>Laki-Laki</td>
+                </tr>
+                <tr>
+                    <td>Gol. Darah</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Diagnosis</td>
+                    <td>Demam Berdarah Dengue</td>
+                </tr>
+                <tr>
+                    <td>HB</td>
+                    <td>8,7</td>
+                </tr>
+                <tr>
+                    <td>Tensi</td>
+                    <td>110</td>
+                </tr>
+                <tr>
+                    <td>Riwayat</td>
+                    <td>Hipotensi, Anemia</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
