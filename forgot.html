@@ -4,53 +4,43 @@
 <head>
     <title>MOVERI | Verification</title>
     <style>
-        .container {
-            align-items: center;
-            display: flex;
-            height: 100vh;
-            justify-content: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-        
         .square {
+            align-items: center;
+            justify-content: center;
+            background-color: white;
             width: 450px;
             height: 480px;
+        }
+        
+        .container {
             text-align: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background-color: white;
+            justify-content: center;
+            align-items: center;
         }
         
         body {
             background-color: #2f7b14;
             font-size: 18px;
-        }
-        
-        table {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 12px;
-        }
-        
-        td {
-            padding: 5px;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
         }
         
         h1 {
             color: #2f7b14;
             font-size: 30px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: block;
+            margin-bottom: 30px;
+            margin-top: 20px;
         }
         
         h2 {
             color: #2f7b14;
             font-size: 16px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-        
-        td {
-            padding-top: 14px;
+            display: block;
         }
         
         input[name="email"] {
@@ -62,19 +52,10 @@
             color: black;
             font-weight: bold;
             font-size: 15px;
-        }
-        
-        input[name="code"] {
-            width: 29px;
-            height: 29px;
-            background-color: silver;
-            border-radius: 6px;
-            border-color: transparent;
-            margin-inline: 11px;
-            color: black;
-            font-weight: bold;
-            text-align: center;
-            font-size: 15px;
+            display: block;
+            margin-top: 30px;
+            margin-bottom: 18px;
+            margin-inline: auto;
         }
         
         input[type="submit"] {
@@ -85,54 +66,47 @@
             font-size: 19px;
             border-radius: 6px;
             border-color: transparent;
+            display: block;
+            margin-bottom: 10px;
+            margin-inline: auto;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #41ab1c;
         }
         
         h3 {
             color: black;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             text-align: center;
-            font-size: 14px
+            font-size: 14px;
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="square">
+    <div class="square">
+        <div class="container">
             <h1>Account Verification</h1>
-            <h2>Please entry your email adress to get the code</h2>
-            <form>
-                <table>
-                    <tr>
-                        <td><input type="text" name="email" placeholder="Entry email adress . ."></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="code">
-                            <input type="text" name="code">
-                            <input type="text" name="code">
-                            <input type="text" name="code">
-                            <input type="text" name="code">
-                            <input type="text" name="code">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" value="send">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h3>not yet received the code?
-                                <a href="forgot.html">reload</a> <br> back to the login page
-                                <a href="login.html">login</a>
-                            </h3>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <h2>Entry Your Email to Get the Code</h2>
+            <input type="text" id="email" name="email" placeholder="entry email adress">
+            <input type="submit" id="send" name="send" value="send" onclick="send()">
+            <h3>Want to login now? <a href="login.html">login</a> </h3>
         </div>
     </div>
+    <script>
+        function send() {
+            var email = document.getElementById('email').value;
+            if (email !== '') {
+                alert('verification done, please check your email to get the code');
+                window.location.href = 'verif.html';
+            } else {
+                alert('failed to verify, try again');
+                window.location.href = 'forgot.html';
+            }
+        }
+    </script>
 </body>
 
 </html>

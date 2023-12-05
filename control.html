@@ -34,6 +34,20 @@
             border-color: transparent;
         }
         
+        input[name="logout"]:hover {
+            width: 70px;
+            height: 38px;
+            border-color: black;
+            border-width: 2px;
+        }
+        
+        input[name="home"]:hover {
+            width: 70px;
+            height: 38px;
+            border-color: black;
+            border-width: 2px;
+        }
+        
         .square0 {
             display: inline-flex;
             position: relative;
@@ -63,7 +77,7 @@
             object-fit: cover;
             font-size: 21px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: bold;
+            font-weight: normal;
             color: #2f7b14;
             margin: 5px;
         }
@@ -91,7 +105,7 @@
             object-fit: cover;
             font-size: 21px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: bold;
+            font-weight: normal;
             color: #2f7b14;
             margin: 5px;
         }
@@ -105,9 +119,25 @@
             object-fit: cover;
             font-size: 21px;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: bold;
+            font-weight: normal;
             color: #2f7b14;
             margin: 5px;
+        }
+        
+        input[name="monitor"]:hover {
+            font-weight: bold;
+        }
+        
+        input[name="control"]:hover {
+            font-weight: bold;
+        }
+        
+        input[name="history"]:hover {
+            font-weight: bold;
+        }
+        
+        input[name="support"]:hover {
+            font-weight: bold;
         }
         
         .container {
@@ -165,6 +195,10 @@
             color: white;
             font-size: 18px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        input[name="apply"]:hover {
+            background-color: #41ab1c;
         }
         
         .container1 {
@@ -227,6 +261,10 @@
             font-size: 18px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
+        
+        input[name="send"]:hover {
+            background-color: #41ab1c;
+        }
     </style>
 </head>
 
@@ -249,62 +287,44 @@
     <div class="square1">
         <div class="container1">
             <h1>Atur jumlah tetesan per menit</h1>
-            <select id="tpm" name="tpm">
-                <option value="10">0</option>
-                <option value="10">5</option>
-                <option value="10">10</option>
-                <option value="10">15</option>
-                <option value="10">20</option>
-                <option value="10">25</option>
-                <option value="10">30</option>
-                <option value="10">35</option>
-                <option value="10">40</option>
-                <option value="10">45</option>
-                <option value="10">50</option>
-                <option value="10">55</option>
-                <option value="10">60</option>
-                <option value="10">65</option>
-                <option value="10">70</option>
-                <option value="10">75</option>
-                <option value="10">80</option>
-                <option value="10">85</option>
-                <option value="10">90</option>
-                <option value="10">95</option>
-                <option value="10">100</option>
-                <option value="10">105</option>
-                <option value="10">110</option>
-                <option value="10">115</option>
-                <option value="10">120</option>
-                <option value="10">125</option>
-                <option value="10">130</option>
-                <option value="10">135</option>
-                <option value="10">140</option>
-                <option value="10">145</option>
-                <option value="10">150</option>
-                <option value="10">155</option>
-                <option value="10">160</option>
-                <option value="10">165</option>
-                <option value="10">170</option>
-                <option value="10">175</option>
-                <option value="10">180</option>
-                <option value="10">185</option>
-                <option value="10">190</option>
-                <option value="10">195</option>
-                <option value="10">200</option>
-            </select>
+            <select id="tpm" name="tpm"></select>
             <input type="submit" name="apply" value="apply">
         </div>
     </div>
     <div class="square2">
         <div class="container2">
             <h1>Lakukan Penggantian Infus?</h1>
-            <select id="kolf" name="kolf">
-                <option value="y">tidak</option>
-                <option value="n">iya</option>
+            <select id="kolf" name="kolf" onchange="updateOptions()">
+                <option value="n">tidak</option>
+                <option value="y">iya</option>
             </select>
-            <input type="submit" name="send" value="send">
+            <input type="submit" name="send" value="send" onclick="valid()">
         </div>
     </div>
+    <script>
+        var optionsByCategory = {
+            n: ["0", "10", "25", "35", "45", "55", "60", "80", "90", "110", "140", "160", "200", "280"],
+            y: ["0"]
+        };
+
+        function updateOptions() {
+            var selectedCategory = document.getElementById("kolf").value;
+            var tpm = document.getElementById("tpm");
+            tpm.innerHTML = '';
+            optionsByCategory[selectedCategory].forEach(function(optionValue) {
+                var option = new Option(optionValue, optionValue);
+                tpm.add(option);
+            });
+        }
+        updateOptions();
+
+        function valid() {
+            var kolf = document.getElementById("kolf").value;
+            if (kolf == 'y') {
+                alert('click the apply button now');
+            }
+        }
+    </script>
 </body>
 
 </html>
